@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Manager</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <h2>Add/Edit Contact</h2>
+  <input type="hidden" id="editId" />
+  <input type="text" id="name" placeholder="Name" />
+  <input type="email" id="email" placeholder="Email" />
+  <input type="text" id="phone" placeholder="Phone" />
+  <input type="text" id="address" placeholder="Address" />
+<input type="text" id="category" placeholder="Category (e.g., Work)" />
+  <button onclick="saveContact()">Save</button>
+
+
+  <h3>Search Contacts</h3>
+  <input type="text" id="searchBox" placeholder="Search by name..." oninput="searchContacts()" />
+
+
+  <h3>Sort By</h3>
+<select id="sortBy" onchange="fetchContacts()">
+  <option value="name">Name</option>
+  <option value="email">Email</option>
+  <option value="phone">Phone</option>
+</select>
+
+<select id="sortOrder" onchange="fetchContacts()">
+  <option value="asc">Ascending</option>
+  <option value="desc">Descending</option>
+</select>
+
+  <h2>Contacts</h2>
+  <ul id="contactList"></ul>
+
+  <div>
+  <button onclick="prevPage()">Previous</button>
+  <span id="pageInfo"></span>
+  <button onclick="nextPage()">Next</button>
+</div>
+
+
+  <script src="app.js"> </script>
+</body>
+</html>
